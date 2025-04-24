@@ -18,10 +18,17 @@ public class Hechicero extends Magicos implements Magico, Defendible{
 
     }
 
+    @Override
+    public void defender() {
+        
+    }
+    
+    @Override
+    public void lanzarHechizo() {
+        
+    }
+    
     public void invocarEntidad(){
 
-    }
-    public void Defender(){
-        
     }
 }

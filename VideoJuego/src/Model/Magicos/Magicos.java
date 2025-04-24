@@ -1,6 +1,4 @@
 package Model.Magicos;
-
-
 import Model.*;
 
 abstract class Magicos extends Personaje {
