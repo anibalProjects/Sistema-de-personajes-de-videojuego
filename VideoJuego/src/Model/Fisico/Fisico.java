@@ -1,5 +1,12 @@
 package Model.Fisico;
+import Model.Personaje;
 
-abstract class Fisico {
+abstract public class Fisico extends Personaje {
 
+    public Fisico(String nombre, int nivel, int salud) {
+        super(nombre, nivel, salud);
+    }
+
+    @Override
+    abstract public void atacar();
 }

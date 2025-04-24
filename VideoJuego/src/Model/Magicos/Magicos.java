@@ -1,5 +1,5 @@
 package Model.Magicos;
 
-abstract class Magico {
+abstract class Magicos {
 
 }
