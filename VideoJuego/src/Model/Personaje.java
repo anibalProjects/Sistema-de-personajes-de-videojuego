@@ -1,6 +1,6 @@
 package Model;
 
-abstract class Personaje {
+abstract public class Personaje {
 
     
     String nombre;
