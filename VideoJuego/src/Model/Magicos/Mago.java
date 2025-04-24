@@ -17,10 +17,15 @@ public class Mago extends Magicos implements Magico,Curable {
     public void atacar(){
 
     }
+    @Override
+    public void curar() {
+        
+    }
     public void lanzarHechizo(){
 
     }
     public void RegenerarMana(){
         
     }
+
 }
