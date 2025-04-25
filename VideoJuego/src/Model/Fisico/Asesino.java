@@ -27,4 +27,7 @@ public class Asesino extends Fisico implements Movilizable, Curable{
     public void moverse() {
 
     }
+
+
+    
 }

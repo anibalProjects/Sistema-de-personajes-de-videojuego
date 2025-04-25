@@ -5,6 +5,5 @@ public class App {
          *Clase Abstracta Personaje
          */
         
-        System.out.println("Hello, World!");
     }
 }
