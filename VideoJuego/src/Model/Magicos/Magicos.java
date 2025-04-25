@@ -8,8 +8,11 @@ abstract class Magicos extends Personaje {
 
     }
 
-    //! Falta implementar el metodo propio no abstracto
+    //*Este es el metodo propio de la clase
+    //? La idea de este metodo es que el propio mago pueda cambiar sus suerte y cuando haga una tirada de "dados" sea capaz de mejorar o empeorar esa tirada
+    public void mejorarSuerte(){
 
+    }
     
    abstract public void atacar();
 }

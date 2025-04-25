@@ -21,6 +21,7 @@ public class Mago extends Magicos implements Magico,Curable {
     public void curar() {
         
     }
+    
     public void lanzarHechizo(){
 
     }
@@ -28,4 +29,7 @@ public class Mago extends Magicos implements Magico,Curable {
         
     }
 
+    public void informacionClaseMago(){
+        
+    }
 }

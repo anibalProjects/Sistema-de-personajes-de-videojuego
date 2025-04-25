@@ -10,13 +10,6 @@ public class Arquero extends Fisico{
         this.numFlechas = numFlechas;
     }
 
-
-
-
-
-
-
-
     @Override
     public void atacar() {
     }
