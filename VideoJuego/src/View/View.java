@@ -3,7 +3,6 @@ package View;
 import Model.Fisico.Arquero;
 
 public class View {
-
     //Colores generales
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
@@ -25,7 +24,6 @@ public class View {
     public static final String BG_WHITE = "\u001B[47m";
 
     public static void flechaLanzada (Arquero arquero) {
-        arquero.dispararFlecha();
         System.out.println(BG_BLUE + "Flecha lanzada por " + arquero.getNombre() + RESET);
     }
 }

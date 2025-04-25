@@ -3,9 +3,9 @@ package Model;
 abstract public class Personaje {
 
     
-    String nombre;
-    int nivel;
-    int salud;
+    public String nombre;
+    public int nivel;
+    public int salud;
     
     public Personaje(String nombre, int nivel, int salud) {
         this.nombre = nombre;
@@ -32,7 +32,7 @@ abstract public class Personaje {
         this.salud = salud;
     }
     
-    abstract public void atacar();
+    abstract public int atacar();
     
     @Override
     public int hashCode() {

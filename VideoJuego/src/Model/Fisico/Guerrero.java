@@ -3,35 +3,47 @@ package Model.Fisico;
 import Model.Interfaz.Defendible;
 
 public class Guerrero extends Fisico implements Defendible{
-    private int fuerza;
+    private boolean fuerza; //habilidad que si se activa se añade 5 de daño pero se baja 10 de vida
     private int armadura;
     private boolean escudo;
+    private int daño = 20;
+    private boolean posibilidadCargaAtaque = true;
 
     public Guerrero(String nombre, int nivel, int salud) {
         super(nombre, nivel, salud);
-        this.fuerza = 20;
         this.armadura = 30;
         this.escudo = false;
     }
 
 
     @Override
-    public void atacar() {
-
+    public int atacar() {
+        return this.daño;
     }
+    
     @Override
     public void defender() {
         setEscudo(true);
     }
 
-    public void reestablecerEscudo() {
+    public int cargarAtaque() {
+        this.posibilidadCargaAtaque = false;
+        return atacar();
+    }
+
+    public void desactivarEscudo() {
         setEscudo(false);
     }
 
-    public int getFuerza() {
+    public void activarFuerza () {
+        this.daño =+ 5;
+        this.salud =- 10;
+    }
+
+    public boolean getFuerza() {
         return fuerza;
     }
-    public void setFuerza(int fuerza) {
+    public void setFuerza(boolean fuerza) {
         this.fuerza = fuerza;
     }
     public int getArmadura() {

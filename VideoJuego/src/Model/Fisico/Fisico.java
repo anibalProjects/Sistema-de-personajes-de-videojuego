@@ -8,5 +8,5 @@ abstract public class Fisico extends Personaje {
     }
 
     @Override
-    abstract public void atacar();
+    abstract public int atacar();
 }
