@@ -1,18 +1,19 @@
 package Model.Fisico;
 
+import Model.Personaje;
+import Model.Interfaz.RecibirDanio;
 import Model.Interfaz.Volador;
 import View.View;
 
-public class Arquero extends Fisico implements Volador{
+public class Arquero extends Fisico implements Volador, RecibirDanio{
     private int agilidad;
     private int numFlechas = 5;
     private int daño = 15;
     private int rondasVolando = 3;
+    private Personaje contrario;
 
     public Arquero(String nombre, int nivel, int salud) {
         super(nombre, nivel, salud);
-        this.agilidad = agilidad;
-        this.numFlechas = numFlechas;
     }
 
     @Override
@@ -26,7 +27,12 @@ public class Arquero extends Fisico implements Volador{
     }
 
     public void activarVuelo () {
-        this.daño =+ 10;
+        if (rondasVolando == 0) {
+            System.out.println("Se han agotado las rondas de vuelo");
+        } else {
+            decrementarRondasVolando();
+            this.daño =+ 10;
+        }
     }
     public void desactivarVuelo () {
         this.daño = 15;
@@ -45,4 +51,9 @@ public class Arquero extends Fisico implements Volador{
     public void reestablecerFlechas () {
         this.numFlechas = 5;
     }
+
+    public void recibirDanio () {
+        //this.salud =- this.contrario.getDaño(); //HAY QUE IMPLEMENTAR DAÑO EN LA SUPER CLASE
+    }
+
 }

@@ -40,6 +40,8 @@ public class Guerrero extends Fisico implements Defendible{
         this.salud =- 10;
     }
 
+    
+
     public boolean getFuerza() {
         return fuerza;
     }
