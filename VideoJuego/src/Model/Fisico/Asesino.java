@@ -35,7 +35,7 @@ public class Asesino extends Fisico implements Movilizable, Curable{
 
     public boolean aleatoriedadCritico () {
         if ((int)(Math.random() * 5) == 0) {
-            return true; 
+            return true;
         } else {
             return false;
         }

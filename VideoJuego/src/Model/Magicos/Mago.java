@@ -3,12 +3,11 @@ import Model.Interfaz.Magico;
 import Model.Interfaz.Curable;
 
 public class Mago extends Magicos implements Magico,Curable {
-
     int mana;
     int sabiduria;
 
     public Mago(String nombre, int nivel, int salud) {
-        super(nombre, nivel, salud);
+        super("Orion", 1, salud);
         this.mana = mana;
         this.sabiduria = sabiduria;
     }
@@ -21,6 +20,7 @@ public class Mago extends Magicos implements Magico,Curable {
     public void curar() {
         
     }
+    
     public void lanzarHechizo(){
 
     }
@@ -28,4 +28,7 @@ public class Mago extends Magicos implements Magico,Curable {
         
     }
 
+    public void informacionClaseMago(){
+        
+    }
 }
