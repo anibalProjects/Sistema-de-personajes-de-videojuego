@@ -1,5 +1,7 @@
 package View;
 
+import Controller.Juego;
+import Model.Personaje;
 import Model.Fisico.Arquero;
 
 public class View {
@@ -23,7 +25,24 @@ public class View {
     public static final String BG_CYAN = "\u001B[46m";
     public static final String BG_WHITE = "\u001B[47m";
 
+
+    private static Juego juego;
+
+    public View() {
+        this.juego = new Juego();
+    }
+
     public static void flechaLanzada (Arquero arquero) {
         System.out.println(BG_BLUE + "Flecha lanzada por " + arquero.getNombre() + RESET);
+        
+    }
+
+    public static void mostrarPersonajes () {
+        System.out.println(juego.getPersonajes().size());
+        for (Personaje personaje : juego.getPersonajes()) {
+            System.out.println("---------------------------------");
+            System.out.println(personaje);
+        } 
+        
     }
 }

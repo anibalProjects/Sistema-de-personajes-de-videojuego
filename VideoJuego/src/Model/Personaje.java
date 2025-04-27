@@ -67,7 +67,7 @@ abstract public class Personaje {
     
     @Override
     public String toString() {
-        return "Personaje [nombre=" + nombre + ", nivel=" + nivel + ", salud=" + salud + "]";
+        return "\nNombre= " + nombre + "\nNivel= " + nivel + "\nSalud= " + salud;
     }
 
 
