@@ -5,6 +5,9 @@ public class App {
          *Clase Abstracta Personaje
          */
         
-        System.out.println("Hello, World!");
+
+         /* La logica de batalla es que cuado se elige el personaje se activa el controlador de ese personaje junto a su view para 
+         poder activar sus habilidades
+        */
     }
 }
