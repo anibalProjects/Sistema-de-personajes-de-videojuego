@@ -56,4 +56,6 @@ public class Arquero extends Fisico implements Volador, RecibirDanio{
         //this.salud =- this.contrario.getDaño(); //HAY QUE IMPLEMENTAR DAÑO EN LA SUPER CLASE
     }
 
+    
+
 }

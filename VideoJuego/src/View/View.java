@@ -1,5 +1,7 @@
 package View;
 
+import java.util.Scanner;
+
 import Controller.Juego;
 import Model.Personaje;
 import Model.Fisico.Arquero;
@@ -43,6 +45,25 @@ public class View {
             System.out.println("---------------------------------");
             System.out.println(personaje);
         } 
-        
+    }
+
+    public static int menuGeneral () {
+        System.out.println("1- Ver personajes");
+        System.out.println("2- Ver habilidades de los personajes");
+        System.out.println("3- Empezar batalla");
+        Scanner scanner = new Scanner(System.in);
+        int eleccion = scanner.nextInt();
+        return eleccion;
+    }
+
+    public static void menuGeneral2 (int eleccion) {
+        switch (eleccion) {
+            case 1:
+                View.mostrarPersonajes();
+                break;
+            case 2: 
+            default:
+                break;
+        }
     }
 }

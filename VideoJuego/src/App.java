@@ -22,7 +22,15 @@ public class App {
         Dados.TiradorDeDados();
 
         View view = new View();
-
-        view.mostrarPersonajes();
+        int eleccion = 1;
+        do {
+            switch (View.menuGeneral()) {
+                case 1:
+                    View.mostrarPersonajes();
+                    break;
+                default:
+                    break;
+            }
+        } while (eleccion != 5);
     }
 }
