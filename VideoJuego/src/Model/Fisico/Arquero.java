@@ -1,11 +1,9 @@
 package Model.Fisico;
 
-import Model.Personaje;
-import Model.Interfaz.RecibirDanio;
 import Model.Interfaz.Volador;
 import View.View;
 
-public class Arquero extends Fisico implements Volador, RecibirDanio{
+public class Arquero extends Fisico implements Volador{
     private int agilidad;
     private int numFlechas = 5;
     private int daño = 15;
@@ -18,10 +16,6 @@ public class Arquero extends Fisico implements Volador, RecibirDanio{
     @Override
     public int atacar() {
         return this.daño;
-    }
-    
-    public void inhibirAtaque () {
-        volar();
     }
     
     @Override

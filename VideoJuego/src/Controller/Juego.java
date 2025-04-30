@@ -12,7 +12,8 @@ import Model.Interfaz.Defendible;
 import Model.Interfaz.Magico;
 import Model.Interfaz.Movilizable;
 import Model.Interfaz.Volador;
-import View.ViewJuego;
+import Model.Magicos.Hechicero;
+import Model.Magicos.Mago;
 
 public class Juego {
     private ArrayList <Personaje> personajes;
@@ -40,14 +41,18 @@ public class Juego {
         personajes.add(asesino);
     }
 
-    public void mostrarAcciones(Personaje jugador, Personaje enemigo) {
-        Scanner scanner = new Scanner (System.in);
-        ViewJuego.menuAcciones(jugador, enemigo);
-        System.out.print("Opción: ");
-        int opcion = scanner.nextInt();
-        
-        
-    }
+    public void mostrarAcciones() {
+        for (Personaje p : personajes) {
+            System.out.println("\n Menú de acciones para " + p.getNombre());
 
+            if (p instanceof Guerrero guerrero) {
+                new GuerreroController(guerrero).mostrarMenu();
+            } else if (p instanceof Arquero arquero) {
+                new ArqueroController(arquero).mostrarMenu();
+            } else if (p instanceof Asesino asesino) {
+                new AsesinoController(asesino).mostrarMenu();
+            }
+        }
+    }
    
 }

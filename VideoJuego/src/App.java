@@ -25,10 +25,7 @@ public class App {
         Dados.TiradorDeDados();
 
         
-        Juego juego = new Juego();
-        Personaje arquero = new Arquero("Viee", 0, 100);
-        Personaje asesino = new Arquero("Asesineee", 0, 100);
+      
 
-        juego.mostrarAcciones(arquero, asesino);
     }
 }
