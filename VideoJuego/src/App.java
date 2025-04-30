@@ -1,4 +1,7 @@
+import Controller.Juego;
 import Controller.TirarDados;
+import Model.Personaje;
+import Model.Fisico.Arquero;
 import View.View;
 
 public class App {
@@ -21,16 +24,11 @@ public class App {
         TirarDados Dados = new TirarDados();
         Dados.TiradorDeDados();
 
-        View view = new View();
-        int eleccion = 1;
-        do {
-            switch (View.menuGeneral()) {
-                case 1:
-                    View.mostrarPersonajes();
-                    break;
-                default:
-                    break;
-            }
-        } while (eleccion != 5);
+        
+        Juego juego = new Juego();
+        Personaje arquero = new Arquero("Viee", 0, 100);
+        Personaje asesino = new Arquero("Asesineee", 0, 100);
+
+        juego.mostrarAcciones(arquero, asesino);
     }
 }

@@ -1,5 +1,5 @@
 package Model.Interfaz;
 
 public interface Movilizable {
-    void moverse();
+    boolean moverse();
 }

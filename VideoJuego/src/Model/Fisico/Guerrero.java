@@ -26,6 +26,12 @@ public class Guerrero extends Fisico implements Defendible{
         setEscudo(true);
     }
 
+    public void inhibirAtaque() {
+        defender();
+    }
+
+    
+
     public int cargarAtaque() {
         this.posibilidadCargaAtaque = false;
         return atacar();

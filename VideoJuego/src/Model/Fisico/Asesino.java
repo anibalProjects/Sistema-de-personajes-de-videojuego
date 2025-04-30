@@ -29,9 +29,14 @@ public class Asesino extends Fisico implements Movilizable, Curable{
     }
 
     @Override
-    public void moverse() {
-
+    public boolean moverse() {
+        return true;
     }
+
+    public void inhibirAtaque() {
+        moverse();
+    }
+    
 
     public boolean aleatoriedadCritico () {
         if ((int)(Math.random() * 5) == 0) {
