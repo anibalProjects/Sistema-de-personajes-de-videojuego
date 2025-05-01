@@ -9,6 +9,7 @@ abstract public class Personaje implements RecibirDanio {
     public int nivel;
     public int salud;
     public int contadorGolpes;
+    public boolean inhibirAtaque;
 
     public Personaje(String nombre, int nivel, int salud,int contadorGolpes) {
         this.nombre = nombre;
@@ -54,6 +55,16 @@ abstract public class Personaje implements RecibirDanio {
             nivel++;
             contadorGolpes = 0;
         }
+    }
+
+    
+
+    public boolean inhibirAtaque() {
+        return this.inhibirAtaque;
+    }
+    
+    public void setEvadiendo(boolean inhibirAtaque) {
+        this.inhibirAtaque = inhibirAtaque;
     }
 
     @Override

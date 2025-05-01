@@ -12,6 +12,8 @@ public class Asesino extends Fisico implements Movilizable, Curable{
     private boolean sigiloActivado = false;
     private boolean critico; //el critico será aleatorio, cada vez que se ataca aleatoriamente se añadirá o no más daño que el base
     private int daño = 20;
+    private int dañoDeRival = 0;
+    private boolean personajeMovido = false;
 
     @Override
     public String toString() {
@@ -36,16 +38,24 @@ public class Asesino extends Fisico implements Movilizable, Curable{
 
     @Override
     public void recibirDanio(int daño) {
+        //this.dañoDeRival = 0;
         this.salud -= daño;
+        //this.dañoDeRival = daño;        
     }
 
     @Override
     public boolean moverse() {
+        this.personajeMovido = true;
         return true;
     }
 
-    public void inhibirAtaque() {
-        moverse();
+
+    public void recogerDañoRivalParaMoverse(int dañoRival){
+        this.salud += this.dañoDeRival;
+    }
+  
+    public boolean inhibirAtaque() {
+        return moverse();
     }
     
 
