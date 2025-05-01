@@ -3,16 +3,24 @@ import Model.*;
 
 abstract class Magicos extends Personaje {
 
-    public Magicos(String nombre, int nivel, int salud) {
-        super(nombre, nivel, salud);
+    protected int mana;
 
+    public Magicos(String nombre, int nivel, int salud,int contadorGolpes, int mana) {
+        super(nombre, nivel, salud,contadorGolpes);
+        this.mana = 100;
     }
 
-    //*Este es el metodo propio de la clase
-    //? La idea de este metodo es que el propio mago pueda cambiar sus suerte y cuando haga una tirada de "dados" sea capaz de mejorar o empeorar esa tirada
-    public void mejorarSuerte(){
-
+    //!Metodo
+    public void regenerarMana(){
+        if(mana < 65){
+            mana+= 35;
+            if(mana > 100){
+                mana = 100;
+            }
+        }else{
+            System.out.println("No se puede regenerar tu mana, se encuentra al maximo " +
+            "\n Tu mana:" + mana);
+        }
     }
-    
-   abstract public void atacar();
+   abstract public int atacar();
 }
