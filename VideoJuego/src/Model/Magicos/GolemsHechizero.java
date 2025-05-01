@@ -2,12 +2,24 @@ package Model.Magicos;
 
 public class GolemsHechizero extends Hechicero {
 
-    private int daño;
-    //! Hay que hacer las stats del golem
-    public GolemsHechizero(String nombre, int nivel, int salud, int daño) {
-        super("Marmolito", nivel, salud);
-        this.daño = 6;
+    public GolemsHechizero(int daño) {
+        super();
+        this.daño = 1;
     }
+
+    private int daño;
+   
+
+    public int manotazo(){
+        System.out.println("El golem da un Manotazo");
+        return 15;
+    }
+
+    public int lanzarRoca(){
+        System.out.println("El Golem lanza roca");
+        return 25;
+    }
+
     public int getDaño() {
         return daño;
     }
@@ -15,5 +27,9 @@ public class GolemsHechizero extends Hechicero {
         this.daño = daño;
     }
 
+    @Override
+    public void recibirDanio(int daño){
+        this.salud =- daño;
+    }
     
 }

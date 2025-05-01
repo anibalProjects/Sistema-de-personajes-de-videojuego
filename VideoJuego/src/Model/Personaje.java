@@ -48,14 +48,12 @@ abstract public class Personaje implements RecibirDanio {
         return result;
     }
 
-    //*Esto debe activarse cuando el personaje haya acertado 3 golpes */
-    //*La idea de esto es que cuando suba de nivel aumente las stats del personaje base en combate */
+    
     public void subidaNivel(){
         if(contadorGolpes == 3){
             nivel++;
             contadorGolpes = 0;
         }
-
     }
 
     @Override
@@ -81,7 +79,7 @@ abstract public class Personaje implements RecibirDanio {
     
     @Override
     public String toString() {
-        return "\nNombre= " + nombre + " Nivel= " + nivel + " Salud= " + salud;
+        return "\nNombre = " + nombre + " | Nivel = " + nivel + " | Salud = " + salud;
     }
 
 

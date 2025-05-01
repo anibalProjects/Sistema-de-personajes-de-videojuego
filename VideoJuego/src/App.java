@@ -4,6 +4,7 @@ import Controller.Juego;
 import Controller.TirarDados;
 import Model.Personaje;
 import Model.Fisico.Arquero;
+import Model.Magicos.GolemsHechizero;
 import View.View;
 
 public class App {
@@ -23,7 +24,7 @@ public class App {
         */
 
         Scanner scanner = new Scanner (System.in);
-
+        GolemsHechizero Golem = new GolemsHechizero(0);
         TirarDados Dados = new TirarDados();
         Dados.TiradorDeDados();
 
@@ -35,8 +36,8 @@ public class App {
         
         Personaje personaje1 = juego.eleccion(eleccion);
         Personaje personaje2 = juego.eleccion(eleccion2);
-        juego.inicializarControlladores(personaje1, personaje2);
-        juego.inicializarControlladores(personaje2, personaje1);
+        juego.inicializarControlladores(personaje1, personaje2,Golem);
+        juego.inicializarControlladores(personaje2, personaje1,Golem);
         do {
             juego.mostrarAcciones(personaje1, personaje2);
             juego.mostrarAcciones(personaje2, personaje1);

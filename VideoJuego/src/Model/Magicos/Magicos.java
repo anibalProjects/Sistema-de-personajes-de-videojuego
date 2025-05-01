@@ -10,8 +10,8 @@ abstract class Magicos extends Personaje {
         this.mana = 100;
     }
 
-    //!Metodo
-    public void regenerarMana(){
+    
+    public void regenerarMana(int mana){
         if(mana < 65){
             mana+= 35;
             if(mana > 100){
@@ -23,4 +23,19 @@ abstract class Magicos extends Personaje {
         }
     }
    abstract public int atacar();
+
+
+   @Override
+   public String toString() {
+       return "Personaje Magico: " + super.toString();
+   }
+
+   public int getMana() {
+    return mana;
+   }
+
+
+   public void setMana(int mana) {
+    this.mana = mana;
+   }
 }
