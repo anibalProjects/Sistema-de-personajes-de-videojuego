@@ -18,13 +18,23 @@ public class Guerrero extends Fisico implements Defendible{
 
     @Override
     public int atacar() {
-        return this.daño;
+        if (posibilidadCargaAtaque) {
+            return this.daño + 10;
+        } else {
+            return this.daño;
+        }
     }
     
     @Override
     public void defender() {
         setEscudo(true);
     }
+
+    public void inhibirAtaque() {
+        defender();
+    }
+
+
 
     public int cargarAtaque() {
         this.posibilidadCargaAtaque = false;
@@ -39,6 +49,8 @@ public class Guerrero extends Fisico implements Defendible{
         this.daño =+ 5;
         this.salud =- 10;
     }
+
+    
 
     public boolean getFuerza() {
         return fuerza;

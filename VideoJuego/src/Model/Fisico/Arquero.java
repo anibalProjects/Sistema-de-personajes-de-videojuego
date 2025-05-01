@@ -11,22 +11,26 @@ public class Arquero extends Fisico implements Volador{
 
     public Arquero(String nombre, int nivel, int salud) {
         super(nombre, nivel, salud);
-        this.agilidad = agilidad;
-        this.numFlechas = numFlechas;
     }
 
     @Override
     public int atacar() {
         return this.daño;
     }
-
+    
     @Override
     public void volar() {
         activarVuelo();
     }
 
+
     public void activarVuelo () {
-        this.daño =+ 10;
+        if (rondasVolando == 0) {
+            System.out.println("Se han agotado las rondas de vuelo");
+        } else {
+            decrementarRondasVolando();
+            this.daño =+ 10;
+        }
     }
     public void desactivarVuelo () {
         this.daño = 15;
@@ -34,6 +38,7 @@ public class Arquero extends Fisico implements Volador{
 
     public void decrementarRondasVolando() {
         this.rondasVolando =- 1;
+        System.out.println("A " + this.nombre + " le quedan " + this.rondasVolando + "volando");
     }
 
     public int dispararFlecha () {
@@ -45,4 +50,11 @@ public class Arquero extends Fisico implements Volador{
     public void reestablecerFlechas () {
         this.numFlechas = 5;
     }
+
+    public void recibirDanio (int daño) {
+        this.salud =- daño; //HAY QUE IMPLEMENTAR DAÑO EN LA SUPER CLASE
+    }
+
+    
+
 }

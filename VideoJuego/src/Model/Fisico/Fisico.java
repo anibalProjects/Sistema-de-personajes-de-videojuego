@@ -9,4 +9,11 @@ abstract public class Fisico extends Personaje {
 
     @Override
     abstract public int atacar();
+
+    @Override
+    public String toString() {
+        return "Personaje Físico: " + super.toString();
+    }
+
+    
 }
