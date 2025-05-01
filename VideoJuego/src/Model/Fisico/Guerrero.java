@@ -3,16 +3,23 @@ package Model.Fisico;
 import Model.Interfaz.Defendible;
 
 public class Guerrero extends Fisico implements Defendible{
+
+    
+    public Guerrero(String nombre, int nivel, int salud, int contadorGolpes) {
+        super(nombre, nivel, salud, contadorGolpes);
+    }
+
+
     private boolean fuerza; //habilidad que si se activa se añade 5 de daño pero se baja 10 de vida
     private int armadura;
     private boolean escudo;
     private int daño = 20;
     private boolean posibilidadCargaAtaque = true;
 
-    public Guerrero(String nombre, int nivel, int salud) {
-        super(nombre, nivel, salud);
-        this.armadura = 30;
-        this.escudo = false;
+    
+    @Override
+    public String toString() {
+        return "Guerrero " + super.toString();
     }
 
 
@@ -49,9 +56,7 @@ public class Guerrero extends Fisico implements Defendible{
         this.daño =+ 5;
         this.salud =- 10;
     }
-
     
-
     public boolean getFuerza() {
         return fuerza;
     }
@@ -69,6 +74,11 @@ public class Guerrero extends Fisico implements Defendible{
     }
     public void setEscudo(boolean escudo) {
         this.escudo = escudo;
+    }
+
+    @Override
+    public void recibirDanio(int daño) {
+        this.salud -= daño;
     }
 
   

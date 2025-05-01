@@ -2,15 +2,19 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.Fisico.Arquero;
+import Model.Personaje;
 import Model.Fisico.Asesino;
 
 public class AsesinoController {
 private Asesino asesino;
+private Personaje contrario;
     
-public AsesinoController(Asesino asesino) {
-    this.asesino = new Asesino("Víos", 0, 100);
+
+    public AsesinoController(Asesino asesino, Personaje contrario) {
+    this.asesino = asesino;
+    this.contrario = contrario;
 }
+
     public Asesino getAsesino() {
         return asesino;
     }
@@ -23,24 +27,30 @@ public AsesinoController(Asesino asesino) {
      public void mostrarMenu() {
         Scanner scanner = new Scanner (System.in);
         int opcion;
-        do {
-            System.out.println("\n--- Menú de " + asesino.getNombre() + " ---");
-            System.out.println("1- Atacar");
-            System.out.println("2- Moverse");
-            System.out.println("3- Curar");
-            System.out.println("4- Sigilo");
+        System.out.println("\n--- Menú de " + asesino.getNombre() + " ---");
+        System.out.println("1- Atacar");
+        System.out.println("2- Moverse");
+        System.out.println("3- Curar");
+        System.out.println("4- Sigilo");
 
-            System.out.print("Opción: ");
-            opcion = scanner.nextInt();
+        System.out.print("Opción: ");
+        opcion = scanner.nextInt();
 
-            switch (opcion) {
-                case 1 -> asesino.atacar(); 
-                case 2 -> asesino.moverse(); 
-                case 3 -> asesino.curar();
-                case 4 -> asesino.activarSigilo();
-                default -> System.out.println("Opción no válida.");
-            }
-        } while (opcion != 0);
-        scanner.close();
+        switch (opcion) {
+            case 1 -> {
+                asesino.atacar(); 
+                contrario.recibirDanio(asesino.getDaño()); 
+                System.out.println(asesino.getNombre() + " atacó! Al enemigo le queda " + contrario.getSalud()); 
+
+            } 
+            case 2 -> asesino.moverse();
+            case 3 -> {asesino.curar(); System.out.println(asesino.getNombre() + " se curó, ahora tiene " + asesino.getSalud() + " de vida");} 
+            case 4 -> asesino.activarSigilo();
+            default -> System.out.println("Opción no válida.");
+        }
+
+
     }
+
+    
 }

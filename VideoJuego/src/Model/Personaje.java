@@ -1,6 +1,8 @@
 package Model;
 
-abstract public class Personaje {
+import Model.Interfaz.RecibirDanio;
+
+abstract public class Personaje implements RecibirDanio {
 
     
     public String nombre;
@@ -79,7 +81,7 @@ abstract public class Personaje {
     
     @Override
     public String toString() {
-        return "\nNombre= " + nombre + "\nNivel= " + nivel + "\nSalud= " + salud;
+        return "\nNombre= " + nombre + " Nivel= " + nivel + " Salud= " + salud;
     }
 
 
