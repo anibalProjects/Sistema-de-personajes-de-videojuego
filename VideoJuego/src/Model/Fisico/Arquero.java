@@ -7,14 +7,22 @@ public class Arquero extends Fisico implements Volador{
     
     public Arquero(String nombre, int nivel, int salud, int contadorGolpes) {
         super(nombre, nivel, salud, contadorGolpes);
-        //TODO Auto-generated constructor stub
     }
     
     private int agilidad;
     private int numFlechas = 5;
     private int daño = 15;
     private int rondasVolando = 3;
+    private boolean volando = false;
     
+    public boolean isVolando() {
+        return volando;
+    }
+
+    public void setVolando(boolean volando) {
+        this.volando = volando;
+    }
+
     @Override
     public String toString() {
         return "Arquero " + super.toString();
@@ -35,8 +43,9 @@ public class Arquero extends Fisico implements Volador{
         if (rondasVolando == 0) {
             System.out.println("Se han agotado las rondas de vuelo");
         } else {
-            decrementarRondasVolando();
-            this.daño =+ 10;
+            setVolando(true);
+            this.daño += 10;
+            System.out.println(this.daño);
         }
     }
     public void desactivarVuelo () {
@@ -44,7 +53,7 @@ public class Arquero extends Fisico implements Volador{
     }
 
     public void decrementarRondasVolando() {
-        this.rondasVolando =- 1;
+        this.rondasVolando -= 1;
         System.out.println("A " + this.nombre + " le quedan " + this.rondasVolando + "volando");
     }
 

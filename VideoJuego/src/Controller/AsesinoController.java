@@ -35,6 +35,10 @@ private Personaje contrario;
 
         System.out.print("Opción: ");
         opcion = scanner.nextInt();
+        
+        if (asesino.inhibirAtaque) {
+            asesino.inhibirAtaque = false;
+        }
 
         switch (opcion) {
             case 1 -> {
@@ -44,7 +48,7 @@ private Personaje contrario;
 
             } 
             case 2 -> {
-                asesino.moverse();
+                asesino.inhibirAtaque();
             } 
             case 3 -> {asesino.curar(); System.out.println(asesino.getNombre() + " se curó, ahora tiene " + asesino.getSalud() + " de vida");} 
             case 4 -> asesino.activarSigilo();
