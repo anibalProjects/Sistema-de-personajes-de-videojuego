@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import Controller.Juego;
 import Controller.TirarDados;
 import Model.Personaje;
@@ -20,9 +22,28 @@ public class App {
          * En la clase Arquero puedes ver un ejemplo pero sin pasarle ningun parámetro
         */
 
+        Scanner scanner = new Scanner (System.in);
 
         TirarDados Dados = new TirarDados();
         Dados.TiradorDeDados();
+
+        Juego juego = new Juego();
+        juego.listarPersonajes();
+        int eleccion = scanner.nextInt();
+        juego.listarPersonajes();
+        int eleccion2 = scanner.nextInt();
+        
+        Personaje personaje1 = juego.eleccion(eleccion);
+        Personaje personaje2 = juego.eleccion(eleccion2);
+        juego.inicializarControlladores(personaje1, personaje2);
+        juego.inicializarControlladores(personaje2, personaje1);
+        do {
+            juego.mostrarAcciones(personaje1, personaje2);
+            juego.mostrarAcciones(personaje2, personaje1);
+            
+            System.out.println(personaje1.getSalud() + " " + personaje2.getSalud());
+        } while (personaje1.getSalud() > 0 || personaje2.getSalud() > 0);
+
 
         
       

@@ -17,6 +17,9 @@ import Model.Magicos.Mago;
 
 public class Juego {
     private ArrayList <Personaje> personajes;
+    private GuerreroController controladorGuerrero;
+    private ArqueroController controladorArquero;
+    private AsesinoController controladorAsesino;
 
     public Juego() {
         this.personajes = new ArrayList();
@@ -33,26 +36,45 @@ public class Juego {
 
 
     public void añadirPersonajes () {
-        Personaje arquero = new Arquero("Dobi", 0, 100);
-        Personaje guerrero = new Guerrero("Laxus", 0, 100);
-        Personaje asesino= new Asesino("Reyo", 0, 100);
+        Personaje arquero = new Arquero("Dobi", 0, 100, 0);
+        Personaje guerrero = new Guerrero("Laxus", 0, 100, 0);
+        Personaje asesino= new Asesino("Reyo", 0, 100, 0);
         personajes.add(arquero);
         personajes.add(guerrero);
         personajes.add(asesino);
     }
 
-    public void mostrarAcciones() {
-        for (Personaje p : personajes) {
-            System.out.println("\n Menú de acciones para " + p.getNombre());
-
-            if (p instanceof Guerrero guerrero) {
-                new GuerreroController(guerrero).mostrarMenu();
-            } else if (p instanceof Arquero arquero) {
-                new ArqueroController(arquero).mostrarMenu();
-            } else if (p instanceof Asesino asesino) {
-                new AsesinoController(asesino).mostrarMenu();
-            }
+    public void listarPersonajes () {
+        int numero = 1;
+        for (Personaje personaje : personajes) {
+            System.out.println(numero + "- " + personaje);
+            numero++;
         }
+    }
+
+    public Personaje eleccion (int eleccion) {
+        return this.personajes.get(eleccion - 1);
+    }
+
+    public void inicializarControlladores(Personaje personaje, Personaje contrario) {
+        if (personaje instanceof Guerrero guerrero) {
+            controladorGuerrero = new GuerreroController(guerrero);
+        } else if (personaje instanceof Arquero arquero) {
+            controladorArquero = new ArqueroController(arquero, contrario);
+        } else if (personaje instanceof Asesino asesino) {
+            controladorAsesino = new AsesinoController(asesino, contrario);
+        }
+    }
+
+    public void mostrarAcciones(Personaje personaje, Personaje contrario) {
+        
+        if (personaje instanceof Guerrero) {
+            controladorGuerrero.mostrarMenu();
+        } else if (personaje instanceof Arquero) {
+            controladorArquero.mostrarMenu();
+        } else if (personaje instanceof Asesino) {
+            controladorAsesino.mostrarMenu();
+        }   
     }
    
 }
