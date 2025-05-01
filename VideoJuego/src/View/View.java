@@ -7,6 +7,8 @@ import Model.Personaje;
 import Model.Fisico.Arquero;
 
 public class View {
+    //! aqui debemos impolementar una vista que muestre las estadisticas del combate a tiempo real todo el rato, como Pokemon por ejemplo
+
     //Colores generales
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";

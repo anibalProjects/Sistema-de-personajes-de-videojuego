@@ -6,11 +6,13 @@ abstract public class Personaje {
     public String nombre;
     public int nivel;
     public int salud;
-    
-    public Personaje(String nombre, int nivel, int salud) {
+    public int contadorGolpes;
+
+    public Personaje(String nombre, int nivel, int salud,int contadorGolpes) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.salud = salud;
+        this.contadorGolpes = 0;
     }
     
     public String getNombre() {
@@ -42,6 +44,16 @@ abstract public class Personaje {
         result = prime * result + nivel;
         result = prime * result + salud;
         return result;
+    }
+
+    //*Esto debe activarse cuando el personaje haya acertado 3 golpes */
+    //*La idea de esto es que cuando suba de nivel aumente las stats del personaje base en combate */
+    public void subidaNivel(){
+        if(contadorGolpes == 3){
+            nivel++;
+            contadorGolpes = 0;
+        }
+
     }
 
     @Override
