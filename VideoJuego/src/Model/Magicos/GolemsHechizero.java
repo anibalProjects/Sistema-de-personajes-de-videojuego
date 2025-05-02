@@ -8,14 +8,13 @@ public class GolemsHechizero extends Hechicero {
     }
 
     private int daño;
-   
 
-    public int manotazo(){
+    public int manotazo() {
         System.out.println("El golem da un Manotazo");
         return 15;
     }
 
-    public int lanzarRoca(){
+    public int lanzarRoca() {
         System.out.println("El Golem lanza roca");
         return 25;
     }
@@ -23,13 +22,14 @@ public class GolemsHechizero extends Hechicero {
     public int getDaño() {
         return daño;
     }
+
     public void setDaño(int daño) {
         this.daño = daño;
     }
 
     @Override
-    public void recibirDanio(int daño){
-        this.salud =- daño;
+    public void recibirDanio(int daño) {
+        this.salud = -daño;
     }
-    
+
 }

@@ -5,8 +5,8 @@ abstract public class Fisico extends Personaje {
 
     
 
-    public Fisico(String nombre, int nivel, int salud, int contadorGolpes) {
-        super(nombre, nivel, salud, contadorGolpes);
+    public Fisico(String nombre, int nivel, int salud) {
+        super(nombre, nivel, salud);
     }
 
     @Override

@@ -37,8 +37,4 @@ public class ViewPersonajes extends View{
         System.out.println("Manotazo: 15 daño ");
         System.out.println("Lanzar roca: 25 daño");
     }
-
-    public static void habilidadesGuerrero(){
-        
-    }
 }

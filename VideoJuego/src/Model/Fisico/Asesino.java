@@ -4,8 +4,8 @@ import Model.Interfaz.Curable;
 import Model.Interfaz.Movilizable;
 
 public class Asesino extends Fisico implements Movilizable, Curable{
-    public Asesino(String nombre, int nivel, int salud, int contadorGolpes) {
-        super(nombre, nivel, salud, contadorGolpes);
+    public Asesino(String nombre, int nivel, int salud) {
+        super(nombre, nivel, salud);
     }
 
     private boolean sigilo = false; //el sigilo tiene un solo uso, esto hace que el asesino haga mas daño 
@@ -42,9 +42,7 @@ public class Asesino extends Fisico implements Movilizable, Curable{
 
     @Override
     public void recibirDanio(int daño) {
-        //this.dañoDeRival = 0;
         this.salud -= daño;
-        //this.dañoDeRival = daño;        
     }
 
     @Override

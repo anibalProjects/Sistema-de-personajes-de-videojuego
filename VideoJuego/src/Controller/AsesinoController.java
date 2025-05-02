@@ -6,14 +6,13 @@ import Model.Personaje;
 import Model.Fisico.Asesino;
 
 public class AsesinoController {
-private Asesino asesino;
-private Personaje contrario;
-    
+    private Asesino asesino;
+    private Personaje contrario;
 
     public AsesinoController(Asesino asesino, Personaje contrario) {
-    this.asesino = asesino;
-    this.contrario = contrario;
-}
+        this.asesino = asesino;
+        this.contrario = contrario;
+    }
 
     public Asesino getAsesino() {
         return asesino;
@@ -23,11 +22,11 @@ private Personaje contrario;
         this.asesino = asesino;
     }
 
-
-     public void mostrarMenu() {
-        Scanner scanner = new Scanner (System.in);
+    public void mostrarMenu() {
+        Scanner scanner = new Scanner(System.in);
         int opcion;
         System.out.println("\n--- Menú de " + asesino.getNombre() + " ---");
+        System.out.println("VIDA: " + asesino.getSalud());
         System.out.println("1- Atacar");
         System.out.println("2- Moverse");
         System.out.println("3- Curar");
@@ -60,8 +59,6 @@ private Personaje contrario;
             default -> System.out.println("Opción no válida.");
         }
 
-
     }
 
-    
 }

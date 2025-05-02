@@ -1,6 +1,5 @@
 package Controller;
 
-
 import java.util.Scanner;
 
 import Model.Personaje;
@@ -21,6 +20,7 @@ public class GuerreroController {
         Scanner scanner = new Scanner(System.in);
         int opcion;
         System.out.println("\n--- Menú de " + guerrero.getNombre() + " ---");
+        System.out.println("VIDA: " + guerrero.getSalud());
         System.out.println("1- Atacar");
         System.out.println("2- Cargar ataque");
         System.out.println("3- Defender");
@@ -58,4 +58,3 @@ public class GuerreroController {
         }
     }
 }
-

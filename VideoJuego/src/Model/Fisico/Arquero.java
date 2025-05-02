@@ -3,63 +3,65 @@ package Model.Fisico;
 import Model.Interfaz.Volador;
 import View.View;
 
-public class Arquero extends Fisico implements Volador{
-    
-    public Arquero(String nombre, int nivel, int salud, int contadorGolpes) {
-        super(nombre, nivel, salud, contadorGolpes);
+public class Arquero extends Fisico implements Volador {
+
+    public Arquero(String nombre, int nivel, int salud) {
+        super(nombre, nivel, salud);
     }
-    
+
     private int agilidad;
     private int numFlechas = 5;
     private int daño = 15;
     private int rondasVolando = 3;
-    private boolean volando = false;
-    
-    public boolean isVolando() {
-        return volando;
-    }
-
-    public void setVolando(boolean volando) {
-        this.volando = volando;
-    }
+    private boolean volando = false; 
 
     @Override
     public String toString() {
         return "Arquero " + super.toString();
     }
-    
+
     @Override
     public int atacar() {
         return dispararFlecha();
     }
-    
+
     @Override
     public void volar() {
         activarVuelo();
     }
 
-
-    public void activarVuelo () {
+    public void activarVuelo() {
         if (rondasVolando == 0) {
             System.out.println("Se han agotado las rondas de vuelo");
-        } else {
-            setVolando(true);
+        } else if (!volando) {
+            volando = true;
+            decrementarRondasVolando();
             this.daño += 10;
-            System.out.println(this.daño);
+            System.out.println(this.nombre + " está volando");
+        } else {
+            System.out.println(this.nombre + " ya está volando.");
         }
     }
-    public void desactivarVuelo () {
-        this.daño = 15;
+
+    public void desactivarVuelo() {
+        if (volando) {
+            volando = false;
+            this.daño -= 10; 
+            System.out.println(this.nombre + " ha dejado de volar. Daño normalizado.");
+        }
     }
 
     public void decrementarRondasVolando() {
-        this.rondasVolando -= 1;
-        System.out.println("A " + this.nombre + " le quedan " + this.rondasVolando + "volando");
+        if (volando) {
+            rondasVolando--;
+            System.out.println("A " + this.nombre + " le quedan " + rondasVolando + " rondas volando.");
+            if (rondasVolando == 0) {
+                desactivarVuelo();
+            }
+        }
     }
 
-    
-
-    public int dispararFlecha () {
+    public int dispararFlecha() {
         if (this.numFlechas <= 0) {
             System.out.println("No te quedan flechas, turno perdido");
             return 0;
@@ -71,12 +73,16 @@ public class Arquero extends Fisico implements Volador{
         }
     }
 
-    public void reestablecerFlechas () {
+    public void reestablecerFlechas() {
         this.numFlechas = 5;
     }
 
-    public void recibirDanio (int daño) {
-        this.salud -= daño; //HAY QUE IMPLEMENTAR DAÑO EN LA SUPER CLASE
+    public void recibirDanio(int daño) {
+        this.salud -= daño;
+    }
+
+    public boolean isVolando() {
+        return volando;
     }
 
     public int getAgilidad() {
@@ -110,7 +116,4 @@ public class Arquero extends Fisico implements Volador{
     public void setRondasVolando(int rondasVolando) {
         this.rondasVolando = rondasVolando;
     }
-
-    
-
 }
