@@ -37,4 +37,25 @@ public class ViewPersonajes extends View{
         System.out.println("Manotazo: 15 daño ");
         System.out.println("Lanzar roca: 25 daño");
     }
+
+    public static void habilidadesGuerrero() {
+        System.out.println("Habilidades del héroe Guerrero:");
+        System.out.println("- Ataque: 20 de daño.");
+        System.out.println("- Cargar Ataque: Incrementa el daño del próximo ataque en 10.");
+        System.out.println("- Defender: Activa un escudo que bloquea el próximo ataque.");
+        System.out.println("- Activar Fuerza: Incrementa el daño en 10 durante 3 rondas, pero reduce la salud en 10.");
+    }
+
+    public static void mostrarHabilidades(String tipoPersonaje) {
+        switch (tipoPersonaje.toLowerCase()) {
+            case "arquero" -> habilidadesArquero();
+            case "asesino" -> habilidadesAsesino();
+            case "guerrero" -> habilidadesGuerrero();
+            case "mago" -> habilidadesMago();
+            case "hechicero" -> habilidadesHechizero();
+            default -> System.out.println("Tipo de personaje no reconocido.");
+        }
+    }
+
+   
 }
