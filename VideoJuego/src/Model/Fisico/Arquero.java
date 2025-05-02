@@ -47,7 +47,7 @@ public class Arquero extends Fisico implements Volador {
         if (volando) {
             volando = false;
             this.daño -= 10; 
-            System.out.println(this.nombre + " ha dejado de volar. Daño normalizado.");
+            System.out.println(this.nombre + " dejó de volar");
         }
     }
 
