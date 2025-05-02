@@ -10,11 +10,13 @@ public class Guerrero extends Fisico implements Defendible{
     }
 
 
-    private boolean fuerza; //habilidad que si se activa se añade 5 de daño pero se baja 10 de vida
+    private boolean fuerza; //habilidad que si se activa se añade 10 de daño pero se baja 10 de vida
     private int armadura;
     private boolean escudo;
     private int daño = 20;
     private boolean posibilidadCargaAtaque = true;
+    private boolean fuerzaActivada = false;
+    private int rondasFuerza = 3;
 
     
     @Override
@@ -45,16 +47,47 @@ public class Guerrero extends Fisico implements Defendible{
 
     public int cargarAtaque() {
         this.posibilidadCargaAtaque = false;
-        return atacar();
+        return atacar() + 10;
     }
 
     public void desactivarEscudo() {
         setEscudo(false);
     }
 
-    public void activarFuerza () {
-        this.daño =+ 5;
-        this.salud =- 10;
+    public void activarFuerza() {
+        if (this.rondasFuerza > 0 && !this.fuerzaActivada) {
+            fuerzaActivada = true;
+            this.daño += 10;
+            this.salud -= 10;
+            System.out.println(this.nombre + " activó su fuerza, se aumento su daño y perdió 10 de salud.");
+        } else if (this.rondasFuerza == 0) {
+            System.out.println("Ya no quedan rondas de fuerza");
+        } else {
+            System.out.println("Se activado la fuerza");
+        }
+    }
+
+    public void decrementarRondasFuerza() {
+        if (this.fuerzaActivada) {
+            this.rondasFuerza--;
+            System.out.println("A " + this.nombre + " le quedan " + this.rondasFuerza + " rondas de fuerza");
+            if (this.rondasFuerza == 0) {
+                desactivarFuerza();
+            }
+        }
+    }
+
+    public void desactivarFuerza() {
+        this.fuerzaActivada = false;
+        this.daño -= 10; 
+    }
+
+    public boolean isFuerzaActivada() {
+        return fuerzaActivada;
+    }
+
+    public int getRondasFuerza() {
+        return rondasFuerza;
     }
     
     public boolean getFuerza() {

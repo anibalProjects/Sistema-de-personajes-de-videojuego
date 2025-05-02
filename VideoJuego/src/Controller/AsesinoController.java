@@ -42,7 +42,12 @@ private Personaje contrario;
 
         switch (opcion) {
             case 1 -> {
-                asesino.atacar(); 
+                {
+                    asesino.atacar();
+                    if(asesino.isSigiloActivado()) {
+                        
+                    }
+                } 
                 contrario.recibirDanio(asesino.getDaño()); 
                 System.out.println(asesino.getNombre() + " atacó! Al enemigo le queda " + contrario.getSalud()); 
 
@@ -51,7 +56,7 @@ private Personaje contrario;
                 asesino.inhibirAtaque();
             } 
             case 3 -> {asesino.curar(); System.out.println(asesino.getNombre() + " se curó, ahora tiene " + asesino.getSalud() + " de vida");} 
-            case 4 -> asesino.activarSigilo();
+            case 4 -> {asesino.activarSigilo(); System.out.println("sigilo activato");}
             default -> System.out.println("Opción no válida.");
         }
 

@@ -66,7 +66,7 @@ public class Juego {
 
     public void inicializarControlladores(Personaje personaje, Personaje contrario, GolemsHechizero golem) {
         if (personaje instanceof Guerrero guerrero) {
-            controladorGuerrero = new GuerreroController(guerrero);
+            controladorGuerrero = new GuerreroController(guerrero, contrario);
         } else if (personaje instanceof Arquero arquero) {
             controladorArquero = new ArqueroController(arquero, contrario);
         } else if (personaje instanceof Asesino asesino) {

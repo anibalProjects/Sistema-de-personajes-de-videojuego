@@ -24,11 +24,15 @@ public class Asesino extends Fisico implements Movilizable, Curable{
     @Override
     public int atacar() {
         if (aleatoriedadCritico()) {
+            if(this.sigilo) {
+                return this.daño + 10;
+            } 
             System.out.println("Golpe crítico!");
             return this.daño + 10;
         } else {
             return this.daño;
         }
+
     }
 
     @Override
@@ -68,7 +72,7 @@ public class Asesino extends Fisico implements Movilizable, Curable{
     }
 
     public void activarSigilo () {
-        if (this.sigiloActivado == false) {
+        if (this.sigiloActivado == true) {
             System.out.println("El modo sigilo ya ha sido activado anteriormente");
         } else {
             this.sigilo =  true;
