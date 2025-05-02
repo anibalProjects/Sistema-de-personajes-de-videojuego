@@ -67,7 +67,6 @@ public class Arquero extends Fisico implements Volador {
             return 0;
         } else {
             this.numFlechas -= 1;
-            View.flechaLanzada(this);
             System.out.println("Te quedan " + this.numFlechas);
             return this.daño;
         }
