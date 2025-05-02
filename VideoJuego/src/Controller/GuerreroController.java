@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import Model.Personaje;
 import Model.Fisico.Guerrero;
-import Model.Interfaz.Defendible;
 
 public class GuerreroController {
     private Guerrero guerrero;

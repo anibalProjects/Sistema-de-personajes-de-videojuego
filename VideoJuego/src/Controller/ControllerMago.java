@@ -3,8 +3,6 @@ package Controller;
 import java.util.Scanner;
 
 import Model.Personaje;
-import Model.Fisico.Arquero;
-import Model.Magicos.Hechicero;
 import Model.Magicos.Mago;
 
 public class ControllerMago {

@@ -1,17 +1,11 @@
 package Controller;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import Model.Personaje;
 import Model.Fisico.Arquero;
 import Model.Fisico.Asesino;
 import Model.Fisico.Guerrero;
-import Model.Interfaz.Curable;
-import Model.Interfaz.Defendible;
-import Model.Interfaz.Magico;
-import Model.Interfaz.Movilizable;
-import Model.Interfaz.Volador;
 import Model.Magicos.GolemsHechizero;
 import Model.Magicos.Hechicero;
 import Model.Magicos.Mago;

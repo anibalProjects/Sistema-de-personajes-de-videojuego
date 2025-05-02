@@ -1,7 +1,6 @@
 package Model.Fisico;
 
 import Model.Interfaz.Volador;
-import View.View;
 
 public class Arquero extends Fisico implements Volador {
 

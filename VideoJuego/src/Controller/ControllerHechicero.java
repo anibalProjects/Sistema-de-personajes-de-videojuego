@@ -5,7 +5,6 @@ import java.util.Scanner;
 import Model.Personaje;
 import Model.Magicos.GolemsHechizero;
 import Model.Magicos.Hechicero;
-import Model.Magicos.Mago;
 
 public class ControllerHechicero {
     private Hechicero Hechicero;
