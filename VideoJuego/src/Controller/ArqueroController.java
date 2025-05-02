@@ -35,7 +35,7 @@ public class ArqueroController {
         System.out.print("Opción: ");
         opcion = scanner.nextInt();
 
-        if (arquero.getRondasVolando() > 0 && arquero.isVolando()) {
+        if (arquero.getRondasVolando() > 0 && arquero.is) {
             arquero.decrementarRondasVolando();
             if (arquero.getRondasVolando() == 0) {
                 
