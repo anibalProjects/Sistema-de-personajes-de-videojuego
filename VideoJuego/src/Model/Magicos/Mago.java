@@ -64,7 +64,7 @@ public class Mago extends Magicos implements Magico, Curable {
 
     @Override
     public void recibirDanio(int daño) {
-        this.salud = -daño;
+        this.salud -= daño;
     }
 
     public int getSabiduria() {

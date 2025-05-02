@@ -34,6 +34,10 @@ public class AsesinoController {
 
         System.out.print("Opción: ");
         opcion = scanner.nextInt();
+        
+        if (asesino.inhibirAtaque) {
+            asesino.inhibirAtaque = false;
+        }
 
         switch (opcion) {
             case 1 -> {
@@ -41,12 +45,11 @@ public class AsesinoController {
                 contrario.recibirDanio(asesino.getDaño());
                 System.out.println(asesino.getNombre() + " atacó! Al enemigo le queda " + contrario.getSalud());
 
-            }
-            case 2 -> asesino.moverse();
-            case 3 -> {
-                asesino.curar();
-                System.out.println(asesino.getNombre() + " se curó, ahora tiene " + asesino.getSalud() + " de vida");
-            }
+            } 
+            case 2 -> {
+                asesino.inhibirAtaque();
+            } 
+            case 3 -> {asesino.curar(); System.out.println(asesino.getNombre() + " se curó, ahora tiene " + asesino.getSalud() + " de vida");} 
             case 4 -> asesino.activarSigilo();
             default -> System.out.println("Opción no válida.");
         }
