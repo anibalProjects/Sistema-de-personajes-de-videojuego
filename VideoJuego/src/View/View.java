@@ -33,11 +33,9 @@ public class View {
     public static final String BG_CYAN = "\u001B[46m";
     public static final String BG_WHITE = "\u001B[47m";
 
-    private static Juego juego;
+    private static Juego juego = new Juego();
 
-    public View() {
-        this.juego = new Juego();
-    }
+    
 
     public static void mostrarPersonajes() {
         System.out.println("Lista de personajes:");

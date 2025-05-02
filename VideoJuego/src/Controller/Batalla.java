@@ -37,6 +37,5 @@ public class Batalla {
             System.out.println("\n¡El ganador es: " + personaje2.getNombre() + "!");
         }
 
-        scanner.close();
     }
 }
