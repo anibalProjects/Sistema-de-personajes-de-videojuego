@@ -19,9 +19,10 @@ public class ControllerHechicero {
     }
 
     public void mostrarMenu() {
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
         int opcion;
         System.out.println("\n--- Menú de " + Hechicero.getNombre() + " ---");
+        System.out.println("VIDA: " + Hechicero.getSalud() + " MANA: " + Hechicero.getMana());
         System.out.println("1- Atacar");
         System.out.println("2- Defender");
         System.out.println("3- Lanzar Hechizo");
@@ -35,29 +36,44 @@ public class ControllerHechicero {
         switch (opcion) {
             case 1 -> {
                 contrario.recibirDanio(Hechicero.atacar());
-                System.out.println(Hechicero.getNombre() + " atacó! Al enemigo le queda " + contrario.getSalud()); 
+                System.out.println(Hechicero.getNombre() + " atacó! Al enemigo le queda " + contrario.getSalud());
 
             }
-            case 2 -> {Hechicero.defender(golem); }
-            case 3 -> {contrario.recibirDanio(Hechicero.lanzarHechizo()); System.out.println("Al enemigo le queda " + contrario.getSalud());}
-            case 4 -> {Hechicero.invocarGolem(golem);}
+            case 2 -> {
+                Hechicero.defender(golem);
+            }
+            case 3 -> {
+                contrario.recibirDanio(Hechicero.lanzarHechizo());
+                System.out.println("Al enemigo le queda " + contrario.getSalud());
+            }
+            case 4 -> {
+                Hechicero.invocarGolem(golem);
+            }
             case 5 -> {
-                if(Hechicero.getGolems().size() < 1){
+                if (Hechicero.getGolems().size() < 1) {
                     System.out.println("No puedes usar un golem, no lo tienes invocado");
-                }else{
+                } else {
                     scanner.nextLine();
                     System.out.println("\n--- Menú de " + "Marmolito" + " ---");
                     System.out.println("1- Manotazo");
                     System.out.println("2- Lanzar Roca");
                     int opcionGolem = scanner.nextInt();
                     switch (opcionGolem) {
-                        case 1 ->{contrario.recibirDanio(golem.manotazo()); System.out.println("Al enemigo le queda " + contrario.getSalud());}
-                        case 2 ->{contrario.recibirDanio(golem.lanzarRoca()); System.out.println("Al enemigo le queda " + contrario.getSalud());}
+                        case 1 -> {
+                            contrario.recibirDanio(golem.manotazo());
+                            System.out.println("Al enemigo le queda " + contrario.getSalud());
+                        }
+                        case 2 -> {
+                            contrario.recibirDanio(golem.lanzarRoca());
+                            System.out.println("Al enemigo le queda " + contrario.getSalud());
+                        }
                         default -> System.out.println("Opcion no válida");
                     }
                 }
             }
-            case 6 -> {Hechicero.regenerarMana(Hechicero.getMana());}
+            case 6 -> {
+                Hechicero.regenerarMana(Hechicero.getMana());
+            }
             default -> System.out.println("Opción no válida.");
         }
     }

@@ -9,7 +9,6 @@ import View.View;
 
 public class App {
     public static void main(String[] args) throws Exception {
-       //! Hay que definir el funcionamiento del nivel y la salud de los personaejes
          /** La logica de batalla es que cuado se elige el personaje se activa el controlador de ese personaje junto a su view para 
          poder activar sus habilidades **/
          
@@ -25,13 +24,15 @@ public class App {
 
         Scanner scanner = new Scanner (System.in);
         GolemsHechizero Golem = new GolemsHechizero(0);
-        TirarDados Dados = new TirarDados();
-        Dados.TiradorDeDados();
-
+       
         Juego juego = new Juego();
+        System.out.println("----- ELECCION PERSONAJE 1 -----");
         juego.listarPersonajes();
+        System.out.print("\nEleccion: ");
         int eleccion = scanner.nextInt();
+        System.out.println("----- ELECCION PERSONAJE 2 -----");
         juego.listarPersonajes();
+        System.out.print("\nEleccion: ");
         int eleccion2 = scanner.nextInt();
         
         Personaje personaje1 = juego.eleccion(eleccion);

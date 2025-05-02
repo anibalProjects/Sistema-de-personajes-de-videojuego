@@ -4,40 +4,44 @@ import Model.Interfaz.RecibirDanio;
 
 abstract public class Personaje implements RecibirDanio {
 
-    
     public String nombre;
     public int nivel;
     public int salud;
     public int contadorGolpes;
 
-    public Personaje(String nombre, int nivel, int salud,int contadorGolpes) {
+    public Personaje(String nombre, int nivel, int salud, int contadorGolpes) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.salud = salud;
         this.contadorGolpes = 0;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public int getNivel() {
         return nivel;
     }
+
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
+
     public int getSalud() {
         return salud;
     }
+
     public void setSalud(int salud) {
         this.salud = salud;
     }
-    
+
     abstract public int atacar();
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -48,9 +52,8 @@ abstract public class Personaje implements RecibirDanio {
         return result;
     }
 
-    
-    public void subidaNivel(){
-        if(contadorGolpes == 3){
+    public void subidaNivel() {
+        if (contadorGolpes == 3) {
             nivel++;
             contadorGolpes = 0;
         }
@@ -76,11 +79,10 @@ abstract public class Personaje implements RecibirDanio {
             return false;
         return true;
     }
-    
+
     @Override
     public String toString() {
         return "\nNombre = " + nombre + " | Nivel = " + nivel + " | Salud = " + salud;
     }
-
 
 }

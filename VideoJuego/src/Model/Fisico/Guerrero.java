@@ -2,26 +2,22 @@ package Model.Fisico;
 
 import Model.Interfaz.Defendible;
 
-public class Guerrero extends Fisico implements Defendible{
+public class Guerrero extends Fisico implements Defendible {
 
-    
     public Guerrero(String nombre, int nivel, int salud, int contadorGolpes) {
         super(nombre, nivel, salud, contadorGolpes);
     }
 
-
-    private boolean fuerza; //habilidad que si se activa se añade 5 de daño pero se baja 10 de vida
+    private boolean fuerza; // habilidad que si se activa se añade 5 de daño pero se baja 10 de vida
     private int armadura;
     private boolean escudo;
     private int daño = 20;
     private boolean posibilidadCargaAtaque = true;
 
-    
     @Override
     public String toString() {
         return "Guerrero " + super.toString();
     }
-
 
     @Override
     public int atacar() {
@@ -31,7 +27,7 @@ public class Guerrero extends Fisico implements Defendible{
             return this.daño;
         }
     }
-    
+
     @Override
     public void defender() {
         setEscudo(true);
@@ -40,8 +36,6 @@ public class Guerrero extends Fisico implements Defendible{
     public void inhibirAtaque() {
         defender();
     }
-
-
 
     public int cargarAtaque() {
         this.posibilidadCargaAtaque = false;
@@ -52,26 +46,31 @@ public class Guerrero extends Fisico implements Defendible{
         setEscudo(false);
     }
 
-    public void activarFuerza () {
-        this.daño =+ 5;
-        this.salud =- 10;
+    public void activarFuerza() {
+        this.daño = +5;
+        this.salud = -10;
     }
-    
+
     public boolean getFuerza() {
         return fuerza;
     }
+
     public void setFuerza(boolean fuerza) {
         this.fuerza = fuerza;
     }
+
     public int getArmadura() {
         return armadura;
     }
+
     public void setArmadura(int armadura) {
         this.armadura = armadura;
     }
+
     public boolean isEscudo() {
         return escudo;
     }
+
     public void setEscudo(boolean escudo) {
         this.escudo = escudo;
     }
@@ -81,5 +80,4 @@ public class Guerrero extends Fisico implements Defendible{
         this.salud -= daño;
     }
 
-  
 }
