@@ -1,6 +1,7 @@
 # 🎮 Sistema de Personajes de Videojuego
 
 ¡Bienvenido al **Sistema de Personajes de Videojuego**! 
+![grupal](https://github.com/user-attachments/assets/f430b3fb-ab21-4774-b568-5dfc2f645c9a)
 
 
 
@@ -60,21 +61,29 @@
 ## 🧙‍♂️ Ejemplo de habilidades de personajes
 
 ### 🏹 Arquero
+![arquero](https://github.com/user-attachments/assets/bd1cfca3-23fa-42db-858a-95a87aab9fb4)
+
 - **Flechas**: 15 de daño.
 - **Volar**: Incrementa el daño durante 3 rondas.
 - **Reestablecer Flechas**: Recarga las flechas disponibles.
 
 ### 🛡️ Guerrero
+![guerrero](https://github.com/user-attachments/assets/6ad4c547-5a90-48ea-93e8-41c523d52c02)
+
 - **Ataque**: 20 de daño.
 - **Cargar Ataque**: Incrementa el daño del próximo ataque en 10.
 - **Defender**: Activa un escudo que bloquea el próximo ataque.
 
 ### 🔮 Mago
+![mago](https://github.com/user-attachments/assets/ecf3ed18-9a38-42c8-97a2-fae48dba6c91)
+
 - **Ataque**: 5 de daño.
 - **Lanzar Hechizo**: 20 de daño.
 - **Escarcha Helida**: 35 de daño.
 
 ### 🧙‍♂️ Hechicero
+![Hechicero](https://github.com/user-attachments/assets/82b865f4-9794-449f-a099-5aed4928302e)
+
 - **Ataque**: 5 de daño.
 - **Lanzar Hechizo**: 20 de daño.
 - **Invocar Golem**: Invoca un golem para atacar o defender.
